@@ -1,6 +1,7 @@
 ﻿using DotNetMachineLearning.Core;
 using DotNetMachineLearning.Models;
 using Microsoft.ML;
+using static DotNetMachineLearning.Core.Constantes;
 
 namespace DotNetMachineLearning
 {
@@ -15,12 +16,26 @@ namespace DotNetMachineLearning
 
         public void CreateFeaturesFromColumns(Dictionary<string, string> columns, bool convertToVector)
         {
-            dataView = base.CreateFeaturesFromColumns<CreditScoringTransformed>(dataView, columns, convertToVector) as IDataView;
+            try
+            {
+                dataView = (IDataView)base.CreateFeaturesFromColumns<CreditScoringTransformed>(dataView, columns, convertToVector);
+
+            }
+            catch (InvalidCastException)
+            {
+
+                throw new InvalidCastException(Constantes.DoitEtreDataView);
+            }
         }
 
         public IEnumerable<CreditScoringTransformed> GetTransformedData()
         {
-            return MLContext.Data.CreateEnumerable<CreditScoringTransformed>(dataView, reuseRowObject: false);
+            return MLContext.Data.CreateEnumerable<CreditScoringTransformed>(dataView, false);
+        }
+
+        public void TrainModel(string[] features, MachineLearningModel machineLearningModel, string modelName)
+        {
+           base.TrainModel(dataView, features, machineLearningModel, modelName);
         }
     }
 }
