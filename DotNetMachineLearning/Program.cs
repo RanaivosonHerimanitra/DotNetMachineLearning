@@ -2,7 +2,7 @@
 using DotNetMachineLearning.Core;
 using DotNetMachineLearning.Models;
 using Microsoft.ML;
-// API
+// API for preping the data
 Console.WriteLine(Contexte.MLContext is MLContext && Contexte.MLContext != null);
 var creditData = new[]
 {
@@ -19,4 +19,5 @@ foreach (var item in creditScoringPrediction.GetTransformedData())
 {
     Console.WriteLine($"\t{item.Score}\t {item.IsDefault}\t\t {item.Age}\t\t  {string.Join(',', item.AgeVector)}\t\t {item.NumberOfCreditCards}\t");
 }
-   
+// API For training
+creditScoringPrediction.TrainModel(new[] { "AgeVector", "NumberOfCreditCards" },Constantes.MachineLearningModel.BinaryClassification, "creditCardBinaryClassification") ; 
