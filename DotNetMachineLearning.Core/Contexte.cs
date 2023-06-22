@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML;
 
-namespace DotNetMachineLearning
+namespace DotNetMachineLearning.Core
 {
     /// <summary>
     /// Inspiration: https://www.c-sharpcorner.com/UploadFile/8911c4/singleton-design-pattern-in-C-Sharp/

@@ -1,4 +1,5 @@
-﻿using DotNetMachineLearning.Models;
+﻿using DotNetMachineLearning.Core;
+using DotNetMachineLearning.Models;
 using Microsoft.ML;
 
 namespace DotNetMachineLearning

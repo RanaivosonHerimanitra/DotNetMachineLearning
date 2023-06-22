@@ -1,4 +1,5 @@
 ﻿using DotNetMachineLearning;
+using DotNetMachineLearning.Core;
 using DotNetMachineLearning.Models;
 using Microsoft.ML;
 // API

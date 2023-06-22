@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML;
 
-namespace DotNetMachineLearning
+namespace DotNetMachineLearning.Core
 {
     public abstract class TransformBase: ExtractBase
     {
