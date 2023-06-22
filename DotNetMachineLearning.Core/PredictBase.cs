@@ -2,7 +2,7 @@
 using Microsoft.ML.Data;
 using System.Data.SqlClient;
 
-namespace DotNetMachineLearning
+namespace DotNetMachineLearning.Core
 {
     public abstract class PredictBase: TransformBase
     {
