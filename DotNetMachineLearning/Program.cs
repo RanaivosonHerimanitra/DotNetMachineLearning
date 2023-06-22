@@ -1,4 +1,5 @@
 ﻿using DotNetMachineLearning;
+using DotNetMachineLearning.Models;
 using Microsoft.ML;
 // API
 Console.WriteLine(Contexte.MLContext is MLContext && Contexte.MLContext != null);

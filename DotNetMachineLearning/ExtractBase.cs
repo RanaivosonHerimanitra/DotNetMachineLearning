@@ -1,6 +1,5 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.Data;
-using Samples.Dynamic;
 using System.Data.SqlClient;
 
 namespace DotNetMachineLearning

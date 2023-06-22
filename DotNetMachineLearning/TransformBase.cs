@@ -5,8 +5,8 @@ namespace DotNetMachineLearning
     public abstract class TransformBase: ExtractBase
     {
         /// <summary>
-        /// ColumnName is a dictionary of Original column (Key)
-        /// and the newly created column vector that corresponding to it (Value).
+        /// ColumnName is a dictionary of the newly created column vector that corresponding to it  (Key)
+        /// and   Original column (Value).
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.ML.Data;
 
-namespace DotNetMachineLearning
+namespace DotNetMachineLearning.Models
 {
     public class CreditScoringTransformed : CreditScoring
     {
