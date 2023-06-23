@@ -1,17 +1,20 @@
 ﻿using DotNetMachineLearning.Core;
+using DotNetMachineLearning.Core.Services;
 using DotNetMachineLearning.Models;
 using Microsoft.ML;
 using static DotNetMachineLearning.Core.Constantes;
 
 namespace DotNetMachineLearning
 {
-    public class CreditScoringPrediction : PredictBase
+    public sealed class CreditScoringPrediction : PredictBase
     {
         private IDataView dataView;
+        private IPrintMetrics printMetrics;
 
-        public CreditScoringPrediction(IEnumerable<CreditScoring> data)
+        public CreditScoringPrediction(IEnumerable<CreditScoring> data, IPrintMetrics printMetrics): base(printMetrics)
         {
             dataView = MLContext.Data.LoadFromEnumerable(data);
+            this.printMetrics = printMetrics;
         }
 
         public void CreateFeaturesFromColumns(Dictionary<string, string> columns, bool convertToVector)

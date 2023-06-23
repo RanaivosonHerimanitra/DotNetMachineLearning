@@ -1,5 +1,6 @@
 ﻿using DotNetMachineLearning;
 using DotNetMachineLearning.Core;
+using DotNetMachineLearning.Core.Services;
 using DotNetMachineLearning.Models;
 using Microsoft.ML;
 // API for preping the data
@@ -8,7 +9,8 @@ var creditData = new[]
 {
     new CreditScoring {Score = 200, Age = 15, IsDefault = true, NumberOfCreditCards = 2},
 };
-var creditScoringPrediction = new CreditScoringPrediction(creditData);
+IPrintMetrics metrics = new PrintMetrics();
+var creditScoringPrediction = new CreditScoringPrediction(creditData, metrics);
 var dict = new Dictionary<string, string>
 {
     { "AgeVector", "Age" }
